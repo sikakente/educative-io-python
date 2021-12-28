@@ -145,6 +145,25 @@ def count_set_bits_using_lookup_table(number):
     return res
 
 
+def number_of_set_bit_counts_in_range(number):
+    """Gets a list containing the number of set bits for each number in a range
+
+    Parameters
+    ----------
+    number : int
+        the highest number in the range for which to count the set bits
+
+    Returns
+    -------
+    list
+        a list containing the number of set bits in a range
+
+    >>> number_of_set_bit_counts_in_range(6)
+    [0, 1, 1, 2, 1, 2, 2]
+    """
+    return [count_set_bits_using_lookup_table(n) for n in range(number+1)]
+
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
