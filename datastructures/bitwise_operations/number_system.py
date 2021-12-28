@@ -29,5 +29,14 @@ def binary_to_decimal(number):
     return decimal_number
 
 
+def num_digits(number):
+    base = 10
+    count = 0
+    while number:
+        number = number // base
+        count += 1
+    return count
+
+
 if __name__ == '__main__':
     number_system(1256)

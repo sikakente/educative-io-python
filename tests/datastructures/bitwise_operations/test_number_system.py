@@ -18,6 +18,9 @@ class MyTestCase(unittest.TestCase):
     def test_binary_to_decimal(self):
         self.assertEqual(37, ns.binary_to_decimal(100101))
 
+    def test_num_digits(self):
+        self.assertEqual(3, ns.num_digits(125))
+
 
 if __name__ == '__main__':
     unittest.main()
