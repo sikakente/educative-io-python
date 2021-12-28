@@ -15,6 +15,9 @@ class MyTestCase(unittest.TestCase):
         expected = [0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1]
         self.assertEqual(expected, ns.binary_number_system(1256))
 
+    def test_binary_to_decimal(self):
+        self.assertEqual(37, ns.binary_to_decimal(100101))
+
 
 if __name__ == '__main__':
     unittest.main()
