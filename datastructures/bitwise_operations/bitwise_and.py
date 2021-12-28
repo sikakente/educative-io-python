@@ -164,6 +164,14 @@ def number_of_set_bit_counts_in_range(number):
     return [count_set_bits_using_lookup_table(n) for n in range(number+1)]
 
 
+def even_or_odd(numbers):
+    even_or_odd_list = [None for i in range(len(numbers))]
+    for idx, num in enumerate(numbers):
+        even_or_odd_list[idx] = 'Even' if num & 1 == 0 else 'Odd'
+
+    return even_or_odd_list
+
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()

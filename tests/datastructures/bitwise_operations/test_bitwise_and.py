@@ -21,6 +21,10 @@ class BitwiseAndTest(unittest.TestCase):
     def test_number_of_set_bit_counts_in_range(self):
         self.assertEqual([0, 1, 1, 2, 1, 2, 2], bsa.number_of_set_bit_counts_in_range(6))
 
+    def test_even_or_odd(self):
+        numbers = [i for i in range(1, 5)]
+        self.assertEqual(['Odd', 'Even', 'Odd', 'Even'], bsa.even_or_odd(numbers))
+
 
 if __name__ == '__main__':
     unittest.main()
