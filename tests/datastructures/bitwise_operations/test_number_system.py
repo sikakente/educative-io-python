@@ -36,6 +36,9 @@ class MyTestCase(unittest.TestCase):
     def test_count_set_bits_using_bitwise_and(self):
         self.assertEqual(6, ns.count_set_bits_with_bitwise_and(125))
 
+    def test_count_set_bits_using_bitwise_and_simple(self):
+        self.assertEqual(6, ns.count_set_bits_with_bitwise_and_simple(125))
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -82,5 +82,13 @@ def count_set_bits_with_bitwise_and(number):
     return set_bits_count
 
 
+def count_set_bits_with_bitwise_and_simple(number):
+    set_bits_count = 0
+    while number:
+        set_bits_count += number & 1
+        number = number >> 1
+    return set_bits_count
+
+
 if __name__ == '__main__':
     number_system(1256)
