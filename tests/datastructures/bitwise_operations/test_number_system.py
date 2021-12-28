@@ -21,6 +21,9 @@ class MyTestCase(unittest.TestCase):
     def test_num_digits(self):
         self.assertEqual(3, ns.num_digits(125))
 
+    def test_num_digits_using_log_approach(self):
+        self.assertEqual(3, ns.num_digits_using_log(125))
+
 
 if __name__ == '__main__':
     unittest.main()

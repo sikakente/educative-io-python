@@ -1,3 +1,5 @@
+import math
+
 
 def number_system(number, base=10):
     numbers = []
@@ -36,6 +38,12 @@ def num_digits(number):
         number = number // base
         count += 1
     return count
+
+
+def num_digits_using_log(number):
+    if number != 0:
+        return math.floor(math.log10(number) + 1)
+    return -1
 
 
 if __name__ == '__main__':
