@@ -15,6 +15,9 @@ class BitwiseAndTest(unittest.TestCase):
     def test_count_set_bits_using_brian_kernighan(self):
         self.assertEqual(6, bsa.count_set_bits_brian_kernighan(125))
 
+    def test_count_set_bits_using_lookup_table(self):
+        self.assertEqual(6, bsa.count_set_bits_using_lookup_table(125))
+
 
 if __name__ == '__main__':
     unittest.main()
