@@ -30,6 +30,9 @@ class MyTestCase(unittest.TestCase):
     def test_bit_counter(self):
         self.assertEqual(7, ns.bit_counter(125))
 
+    def test_count_set_bits(self):
+        self.assertEqual(6, ns.count_set_bits(125))
+
 
 if __name__ == '__main__':
     unittest.main()

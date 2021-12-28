@@ -59,11 +59,18 @@ def bitwise_decimal_to_binary(number):
 
 def bit_counter(number):
     bit_count = 0
-
     while 1 << bit_count <= number:
         bit_count += 1
-
     return bit_count
+
+
+def count_set_bits(number):
+    set_bits_count = 0
+    while number:
+        if number % 2 == 1:
+            set_bits_count += 1
+        number = number >> 1
+    return set_bits_count
 
 
 if __name__ == '__main__':
