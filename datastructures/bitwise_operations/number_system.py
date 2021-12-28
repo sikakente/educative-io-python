@@ -118,6 +118,9 @@ def count_set_bits_brian_kernighan(number):
     -------
     int
         an integer representing the count of set bits in a binary number
+
+    >>> count_set_bits_brian_kernighan(125)
+    6
     """
     set_bits_count = 0
     while number:
@@ -127,4 +130,5 @@ def count_set_bits_brian_kernighan(number):
 
 
 if __name__ == '__main__':
-    number_system(1256)
+    import doctest
+    doctest.testmod()

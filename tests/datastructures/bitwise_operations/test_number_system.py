@@ -25,7 +25,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(3, ns.num_digits_using_log(125))
 
     def test_bitwise_decimal_to_binary(self):
-        self.assertEqual(([1,1, 1, 1, 1, 0, 1], 7), ns.bitwise_decimal_to_binary(125))
+        self.assertEqual(([1, 1, 1, 1, 1, 0, 1], 7), ns.bitwise_decimal_to_binary(125))
 
     def test_bit_counter(self):
         self.assertEqual(7, ns.bit_counter(125))
