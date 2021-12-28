@@ -24,6 +24,9 @@ class MyTestCase(unittest.TestCase):
     def test_num_digits_using_log_approach(self):
         self.assertEqual(3, ns.num_digits_using_log(125))
 
+    def test_bitwise_decimal_to_binary(self):
+        self.assertEqual(([1,1, 1, 1, 1, 0, 1], 7), ns.bitwise_decimal_to_binary(125))
+
 
 if __name__ == '__main__':
     unittest.main()

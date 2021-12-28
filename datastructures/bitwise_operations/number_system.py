@@ -46,5 +46,16 @@ def num_digits_using_log(number):
     return -1
 
 
+def bitwise_decimal_to_binary(number):
+    bit_count = 0
+    decimal_number = []
+    while number:
+        number, remainder = number >> 1, number % 2
+        bit_count += 1
+        decimal_number.append(remainder)
+
+    return list(reversed(decimal_number)), bit_count
+
+
 if __name__ == '__main__':
     number_system(1256)
