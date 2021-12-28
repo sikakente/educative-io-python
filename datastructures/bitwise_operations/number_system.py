@@ -57,5 +57,14 @@ def bitwise_decimal_to_binary(number):
     return list(reversed(decimal_number)), bit_count
 
 
+def bit_counter(number):
+    bit_count = 0
+
+    while 1 << bit_count <= number:
+        bit_count += 1
+
+    return bit_count
+
+
 if __name__ == '__main__':
     number_system(1256)
