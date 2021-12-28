@@ -25,6 +25,18 @@ class BitwiseAndTest(unittest.TestCase):
         numbers = [i for i in range(1, 5)]
         self.assertEqual(['Odd', 'Even', 'Odd', 'Even'], bsa.even_or_odd(numbers))
 
+    def test_is_power_of_two(self):
+        self.assertTrue(bsa.is_power_of_two(4))
+        self.assertFalse(bsa.is_power_of_two(12))
+        self.assertFalse(bsa.is_power_of_two(0))
+        self.assertTrue(bsa.is_power_of_two(1))
+
+    def test_is_power_of_two_kernighan(self):
+        self.assertTrue(bsa.is_power_of_two_brian_kernighan(4))
+        self.assertFalse(bsa.is_power_of_two_brian_kernighan(12))
+        self.assertFalse(bsa.is_power_of_two_brian_kernighan(0))
+        self.assertTrue(bsa.is_power_of_two_brian_kernighan(1))
+
 
 if __name__ == '__main__':
     unittest.main()

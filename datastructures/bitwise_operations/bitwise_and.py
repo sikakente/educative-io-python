@@ -165,11 +165,79 @@ def number_of_set_bit_counts_in_range(number):
 
 
 def even_or_odd(numbers):
+    """Iterates through a list of integers and returns a list indicating
+    which numbers are odd or even
+
+    Parameters
+    ----------
+    numbers: list
+        integer list e.g. [1, 2, 3, 4]
+
+    Returns
+    -------
+    list
+        a string list containing the words "Odd" or "Even" corresponding to
+        whether the number at the index in the supplied integer list is even or odd
+
+    >>> even_or_odd([1, 2, 3, 4])
+    ['Odd', 'Even', 'Odd', 'Even']
+    """
     even_or_odd_list = [None for i in range(len(numbers))]
     for idx, num in enumerate(numbers):
         even_or_odd_list[idx] = 'Even' if num & 1 == 0 else 'Odd'
 
     return even_or_odd_list
+
+
+def is_power_of_two(number):
+    if number < 1:
+        return False
+    if number == 1:
+        return True
+    while number > 2:
+        number = number >> 1
+        if number & 1 == 1:
+            return False
+    return True
+
+
+def is_power_of_two_brian_kernighan(number):
+    """Checks whether a given integer is a power of 2
+
+    It uses the Brian Kernighan algorithm used to count the set bits.
+    We know that powers of 2 only have 1 set bit.
+    e.g 2^0 = 1, 2^1= 10, 2^2= 100 ...
+
+    By applying a bitwise & to the given integer and the next smallest integer
+    if the the result is 0, then we know it is a power of 2. Otherwise it is not
+    e.g Given 4:
+    n = 4       => 100
+    n -1 = 3    =>  11
+    ---------------------
+    &           => 0 True
+    ---------------------
+
+    n = 5       => 101
+    n -1 = 3    => 100
+    ---------------------
+    &           => 001 False
+    ---------------------
+
+    Parameters
+    ----------
+    number : int
+        positive integer
+
+    Returns
+    -------
+    bool
+        indicates whether the given number is a power of 2. e.g. True or False
+
+    """
+    if number == 0:
+        return False
+    return (number & (number - 1)) == 0
+
 
 
 if __name__ == '__main__':
