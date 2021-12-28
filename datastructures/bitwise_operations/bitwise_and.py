@@ -58,6 +58,9 @@ def count_set_bits_brian_kernighan(number):
     (n & (n - 1)) = 32  => 00000000 00000000 00000000 00100000
     -----------------------------------------------------------
 
+    Time Complexity: O(1)
+    Space Complexity: O(1)
+
     Parameters
     ----------
     number : int
@@ -100,6 +103,9 @@ def count_set_bits_using_lookup_table(number):
         - To check on each of the 4 8-bit chunkc using result += table[n & 0xff]
         - Shift n by 8 bits (n >>= 8), we do this to get the second last 8 bits
     5. return result
+
+    Time Complexity: O(1)
+    Space Complexity: O(256) ~= O(1)
 
     Parameters
     ----------
