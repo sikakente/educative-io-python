@@ -239,7 +239,6 @@ def is_power_of_two_brian_kernighan(number):
     return (number & (number - 1)) == 0
 
 
-
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
