@@ -146,6 +146,9 @@ def fast_tabulated_fibonacci(n):
     >>> fast_tabulated_fibonacci(4)
     3
 
+    >>> fast_tabulated_fibonacci(5)
+    5
+
     """
     if n < 0:
         raise ValueError("Value cannot be negative")
