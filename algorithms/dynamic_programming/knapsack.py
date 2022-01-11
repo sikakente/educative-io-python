@@ -92,6 +92,46 @@ def memoized_knapsack(profits, profits_length, weights, capacity):
     return ks(capacity, 0, 0)
 
 
+def bottom_up_knapsack(profits, profits_length, weights, capacity):
+    """
+
+    Parameters
+    ----------
+    profits : list
+        integer list containing profits
+    profits_length : int
+        number of profits in profit list
+    weights : list
+        integer list of weights
+    capacity : int
+        capacity of the bag
+
+    Returns
+    -------
+    int
+        maximum profit
+
+    >>> profits = [60, 100, 120]
+    >>> profits_length = 3
+    >>> weights = [10, 20, 30]
+    >>> capacity = 50
+    >>> bottom_up_knapsack(profits, profits_length, weights, capacity)
+    220
+
+    """
+
+    cache = [[0 for _ in range(capacity + 1)] for _ in range(profits_length + 1)]
+
+    for p in range(1, profits_length + 1):
+        for c in range(1, capacity + 1):
+            if weights[p - 1] <= c:
+                cache[p][c] = max(profits[p - 1] + cache[p - 1][c - weights[p - 1]], cache[p - 1][c])
+            else:
+                cache[p][c] = cache[p - 1][c]
+
+    return cache[profits_length][capacity]
+
+
 if __name__ == '__main__':
     import doctest
 
