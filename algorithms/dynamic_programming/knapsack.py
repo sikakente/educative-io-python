@@ -129,6 +129,16 @@ def bottom_up_knapsack(profits, profits_length, weights, capacity):
             else:
                 cache[p][c] = cache[p - 1][c]
 
+    selected_items = []
+    cap_index, weight_index = capacity, profits_length
+
+    while cap_index > 0 and weight_index > 0:
+        # if item is added to bag
+        if cache[weight_index][cap_index] != cache[weight_index - 1][cap_index]:
+            selected_items.append((weights[weight_index - 1], profits[weight_index - 1]))
+            cap_index -= weights[weight_index - 1]
+        weight_index -= 1
+
     return cache[profits_length][capacity]
 
 
