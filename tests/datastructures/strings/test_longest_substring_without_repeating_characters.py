@@ -8,7 +8,7 @@ from datastructures.strings import longest_substring_without_repeating_character
     ("bbbbb", 1),
     ("pwwkew", 3)
 ])
-def test_memoized_can_sum(input_str, expected):
+def test_longest_substring_without_repeating_characters(input_str, expected):
     assert expected == ls.longest_substring_without_repeating_characters(input_str)
 
 
