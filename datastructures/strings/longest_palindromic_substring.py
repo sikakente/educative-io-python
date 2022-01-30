@@ -38,6 +38,23 @@ def longest_palindromic_substring(input_string):
     return input_string[left_idx + 1:right_idx]
 
 
+def recursive_longest_palindromic_substring(input_string):
+    def helper(start, end):
+        if start == end:
+            return 1
+        if start > end:
+            return 0
+
+        longest = 0
+        if input_string[start] == input_string[end]:
+            longest_inbetween = helper(start + 1, end - 1)
+            if longest_inbetween + 2 == (end - start) + 1:
+                longest = longest_inbetween + 2
+        return max(longest, helper(start + 1, end), helper(start, end - 1))
+
+    return helper(0, len(input_string) - 1)
+
+
 if __name__ == '__main__':
     import doctest
 
