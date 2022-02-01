@@ -21,6 +21,21 @@ bool indicating whether the parentheses are valid
 
 
 def valid_parentheses(input_str):
+    """
+
+    Parameters
+    ----------
+    input_str : str
+        input string with parentheses
+
+    Returns
+    -------
+    bool
+        boolean indicating whether the parentheses are valid
+
+    >>> valid_parentheses("()[]{}")
+    True
+    """
     parentheses_map = {
         ")": "(",
         "}": "{",
