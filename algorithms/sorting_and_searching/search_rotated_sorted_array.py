@@ -44,6 +44,36 @@ def search_rotated_sorted_array(numbers, target):
     return -1
 
 
+def search_rotated_sorted_array_2(numbers, target):
+    list_size = len(numbers)
+
+    def get_pivot(lo, hi):
+        while lo < hi:
+            mid = (lo + hi) // 2
+            if numbers[mid] >= numbers[0]:
+                lo = mid + 1
+            else:
+                hi = mid
+
+        return lo
+
+    def binary_search(lo, hi):
+        while lo <= hi:
+            mid = (lo + hi) // 2
+            if numbers[mid] == target:
+                return mid
+            if target < numbers[mid]:
+                hi = mid - 1
+            else:
+                lo = mid + 1
+
+        return -1
+
+    high, low = list_size - 1, 0
+    pivot = get_pivot(low, high)
+    return binary_search(pivot, list_size - 1)
+
+
 if __name__ == '__main__':
     import doctest
 
