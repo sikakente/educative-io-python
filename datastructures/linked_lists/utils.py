@@ -27,13 +27,13 @@ class LinkedList:
             self.head = new_node
         self.size += 1
 
-    def to_array(self):
+    def to_array(self, reverse=False):
         items = []
         current = self.head
         while current:
             items.append(current.value)
             current = current.next
-        return items[::-1]
+        return items if reverse else items[::-1]
 
     def __str__(self):
         return f"LinkedList(size={self.size})"
@@ -44,3 +44,14 @@ def build_list(values):
     for val in values:
         linked_list.add_first(val)
     return linked_list
+
+
+def list_size(node):
+    size = 0
+    if node:
+        current = node
+        while current:
+            current = current.next
+            size += 1
+
+    return size
