@@ -19,6 +19,8 @@ def largest_subarray_sum(numbers):
 
     It uses Kadane's algorithm to do this.
 
+    Same as max sum subarray
+
     Parameters
     ----------
     numbers : list
