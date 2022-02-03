@@ -37,6 +37,60 @@ def rotate_image(matrix):
     return matrix
 
 
+def rotate_image_faster(matrix):
+    """
+    This is a faster approach from the discussions on leetcode:
+    https://leetcode.com/problems/rotate-image/discuss/1737976/Python-or-visual-explanation-or-complexity-analysis
+
+    It first transposes the matrix. i.e. or diagonal mirror
+        ----------
+        |\       |
+        |  \     |
+        |     \  |
+        ----------
+        Formula: matrix[r][c], matrix[c][r] =  matrix[c][r], matrix[r][c]
+    Then Folds the transposed matrix i.e. or horizontal mirror
+        ----------
+        |   |    |
+        |   |    |
+        |   |    |
+        ----------
+        - matrix[r][c], matrix[r][((n-1)-c)%n)] = matrix[r][((n-1)-c)%n)], matrix[r][c]
+
+
+    Parameters
+    ----------
+    matrix : list
+        matrix representing an image
+        this is an n X n matrix
+
+    Returns
+    -------
+    list
+        The rotated matrix
+
+    """
+    row_length, column_length = len(matrix), len(matrix[0])
+
+    def transpose():
+        for r in range(row_length):
+            for c in range(column_length):
+                if r > c:
+                    matrix[r][c], matrix[c][r] = matrix[c][r], matrix[r][c]
+
+    def fold():
+        for r in range(row_length):
+            for c in range(column_length):
+                center = column_length // 2
+                if c < center:
+                    reflected_column = ((column_length - 1) - c) % column_length
+                    matrix[r][c], matrix[r][reflected_column] = matrix[r][reflected_column], matrix[r][c]
+
+    transpose()
+    fold()
+    return matrix
+
+
 if __name__ == '__main__':
     import doctest
 
