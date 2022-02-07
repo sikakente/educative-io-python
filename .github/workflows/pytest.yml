@@ -1,5 +1,5 @@
 # .github/workflows/app.yaml
-name: Pytest
+name: Setup project with pipenv and run tests
 on: push
 
 jobs:
