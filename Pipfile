@@ -12,6 +12,7 @@ pluggy = "==1.0.0"
 py = "==1.11.0"
 pyparsing = "==3.0.6"
 toml = "==0.10.2"
+py-console = "*"
 
 [dev-packages]
 pytest = "*"
