@@ -1,6 +1,6 @@
 import unittest
 import pytest
-from datastructures.graphs import unique_paths as up
+from algorithms.dynamic_programming import unique_paths as up
 
 
 @pytest.mark.parametrize("m, n,expected", [
