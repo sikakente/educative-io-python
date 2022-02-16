@@ -61,6 +61,37 @@ def longest_substring_with_k_distinct_characters(input_str, k):
     return input_str if longest_right_idx - longest_left_idx == 0 else input_str[longest_left_idx:longest_right_idx]
 
 
+NUM_CHARS = 128
+
+
+def longest_substring_with_k_distinct_characters_2(input_str, k):
+    char_frequency = [0 for _ in range(NUM_CHARS)]
+    left = right = 0
+    begin = end = 0
+    window = set()
+    input_size = len(input_str)
+
+    while right < input_size:
+        current_char = input_str[right]
+        char_frequency[ord(current_char)] = char_frequency[ord(current_char)] + 1
+        window.add(current_char)
+        # move left if there are more than k distinct chars in current window
+        while len(window) > k:
+            left_char = input_str[left]
+            char_frequency[ord(left_char)] = char_frequency[ord(left_char)] - 1
+            if char_frequency[ord(left_char)] == 0:
+                window.remove(left_char)
+            left += 1
+
+        # update window size
+        if right - left > end - begin:
+            begin, end = left, right
+
+        right += 1
+
+    return input_str[begin:end + 1]
+
+
 if __name__ == '__main__':
     import doctest
 
