@@ -58,6 +58,7 @@ def recursive_coin_change(amount, denoms, denoms_length):
 
 def memoized_coin_change(amount, denoms, denoms_length):
     """
+    Memoized version
 
     Parameters
     ----------
