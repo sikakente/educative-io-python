@@ -24,6 +24,9 @@ minimum in rotated sorted array
 def min_in_rotated_sorted_array(nums):
     low, high = 0, len(nums) - 1
 
+    if nums[low] <= nums[high]:
+        return nums[low]
+    
     while low < high:
         mid = (low + high) // 2
         if nums[mid] < nums[0]:
