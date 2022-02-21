@@ -45,3 +45,25 @@ class BinaryTree:
                 node.right = right_node
                 self.size += 1
                 self.insert_nodes(node.right, values, right_node_position)
+
+    def preorder(self, node, accumulator):
+        if node:
+            accumulator.append(node.value)
+            self.preorder(node.left, accumulator)
+            self.preorder(node.right, accumulator)
+        return accumulator
+
+    def inorder(self, node, accumulator):
+        if node:
+            self.inorder(node.left, accumulator)
+            accumulator.append(node.value)
+            self.inorder(node.right, accumulator)
+
+        return accumulator
+
+    def postorder(self, node, accumulator):
+        if node:
+            self.postorder(node.left, accumulator)
+            self.postorder(node.right, accumulator)
+            accumulator.append(node.value)
+        return accumulator
