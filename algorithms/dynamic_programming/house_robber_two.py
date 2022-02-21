@@ -25,6 +25,7 @@ def rob(nums):
 
 
 def rob_helper(start, end, nums):
+    # uses house robber problem
     num_size = len(nums)
     if end - start == 1:
         return nums[start]
