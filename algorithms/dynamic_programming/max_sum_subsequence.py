@@ -1,7 +1,7 @@
 """
 Problem Statement
 -----------------
-Find the maximum sum of a subsequence made up of nonadjacent elements in an array.
+Find the maximum sum of a subsequence made up of nonadjacent elements in an arrays.
 
 Input
 -----

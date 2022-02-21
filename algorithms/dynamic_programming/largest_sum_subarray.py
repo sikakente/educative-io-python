@@ -1,7 +1,7 @@
 """
 Problem Statement
 ----------------
-Given an array, find the contiguous subarray with the largest sum.
+Given an arrays, find the contiguous subarray with the largest sum.
 
 Input
 -----
