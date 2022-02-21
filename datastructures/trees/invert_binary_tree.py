@@ -6,7 +6,7 @@ Given the root of a binary tree, invert the tree, and return its root.
 
 Input
 -----
-a tree
+a binary tree
 
 Output
 -------
