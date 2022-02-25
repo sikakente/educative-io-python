@@ -27,9 +27,9 @@ class LinkedList:
             self.head = new_node
         self.size += 1
 
-    def to_array(self, reverse=False):
+    def to_array(self, reverse=False, node=None):
         items = []
-        current = self.head
+        current = node or self.head
         while current:
             items.append(current.value)
             current = current.next
@@ -80,3 +80,12 @@ def list_size(node):
             size += 1
 
     return size
+
+
+def to_array(node, reverse=False):
+    items = []
+    current = node
+    while current:
+        items.append(current.value)
+        current = current.next
+    return items if reverse else items[::-1]
