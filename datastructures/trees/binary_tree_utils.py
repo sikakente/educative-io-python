@@ -67,3 +67,11 @@ class BinaryTree:
             self.postorder(node.right, accumulator)
             accumulator.append(node.value)
         return accumulator
+
+
+def find_node(node, value):
+    if node is None:
+        return None
+    if node.value == value:
+        return node
+    return find_node(node.left, value) or find_node(node.right, value)
