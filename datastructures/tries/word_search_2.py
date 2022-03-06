@@ -39,6 +39,7 @@ def build_dictionary(words):
 
 
 def find_words(board, words):
+    # TODO: Optimize this algorithm
     word_dictionary = build_dictionary(words)
     row_length, col_length = len(board), len(board[0])
     is_visited = [[False for _ in range(col_length)] for _ in range(row_length)]
