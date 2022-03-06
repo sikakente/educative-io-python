@@ -16,6 +16,7 @@ from datastructures.graphs.utils import create_adjacency_list
 
 
 def num_connected_components(n, edges):
+    # solved already
     graph = create_adjacency_list(n, edges)
     is_visited = [False for _ in range(n)]
 
