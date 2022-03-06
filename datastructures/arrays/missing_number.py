@@ -22,7 +22,7 @@ def missing_number(nums):
     expected_sum = (n * (n + 1)) // 2
 
     if expected_sum != actual:
-        return int(expected_sum - actual)
+        return expected_sum - actual
     return -1
 
 
