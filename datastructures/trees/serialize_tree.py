@@ -66,3 +66,49 @@ class Codec:
 
         insert_nodes(root, tree_values, 0)
         return root
+
+
+class Codec2:
+
+    def serialize(self, root):
+        accumulator = []
+
+        def preorder(node):
+            if node:
+                accumulator.append(str(node.value))
+                preorder(node.left)
+                preorder(node.right)
+
+        preorder(root)
+        return SEPERATOR.join(accumulator)
+
+    def deserialize(self, data):
+        if data == "":
+            return None
+
+        tree_values = data.split(SEPERATOR)
+        tree_values = [int(value) for value in tree_values]
+
+        parent = root = TreeNode(value=tree_values[0])
+        n = len(tree_values)
+        i = 1
+        stack = [TreeNode(value=float("inf"))]
+
+        while i < n:
+            current_val = tree_values[i]
+            if current_val < parent.value:
+                new_node = TreeNode(value=current_val)
+                parent.left = new_node
+                stack.append(parent)
+                parent = new_node
+                i += 1
+            else:
+                if parent.value < current_val < stack[-1].value:
+                    new_node = TreeNode(value=current_val)
+                    parent.right = new_node
+                    parent = new_node
+                    i += 1
+                else:
+                    parent = stack.pop()
+
+        return root
