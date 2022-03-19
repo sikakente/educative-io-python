@@ -20,7 +20,7 @@
 
 <!-- Icon -->
 
-<p align="center"><img src="/assets/project-icon.svg" width="20%"/></p>
+<p align="center"><img src="assets/jest.png" width="20%"/></p>
 
 <!-- Title -->
 
