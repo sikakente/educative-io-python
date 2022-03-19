@@ -39,8 +39,11 @@ def longest_palindromic_substring(input_string):
 
 
 def recursive_longest_palindromic_substring(input_string):
+    all_palindromes = []
+
     def helper(start, end):
         if start == end:
+            all_palindromes.append(input_string[start:end + 1])
             return 1
         if start > end:
             return 0
@@ -49,6 +52,7 @@ def recursive_longest_palindromic_substring(input_string):
         if input_string[start] == input_string[end]:
             longest_inbetween = helper(start + 1, end - 1)
             if longest_inbetween + 2 == (end - start) + 1:
+                all_palindromes.append(input_string[start:end + 1])
                 longest = longest_inbetween + 2
         return max(longest, helper(start + 1, end), helper(start, end - 1))
 

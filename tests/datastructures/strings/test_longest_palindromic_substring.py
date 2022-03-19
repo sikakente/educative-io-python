@@ -14,6 +14,8 @@ def test_longest_palindromic_substring(input_str, expected):
 @pytest.mark.parametrize("input_str,expected", [
     ("babad", 3),
     ("cbbd", 2),
+    ("aaa", 3),
+    ("abc", 1)
 ])
 def test_recursive_longest_palindromic_substring(input_str, expected):
     assert expected == lps.recursive_longest_palindromic_substring(input_str)
