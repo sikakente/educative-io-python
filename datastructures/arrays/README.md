@@ -26,6 +26,45 @@
 
 ## Properties of an array
 
+<table>
+<tr>
+  <th colspan="2"></th>
+  <th>Search</th>
+  <th>Access</th>
+  <th>Insert</th>
+  <th>Remove/Delete</th>
+</tr>
+ <tr>
+  <th rowspan="2">Time Complexity</th>
+  <th>Average</th>
+  <td>O(n)</td>
+  <td>O(1)</td>
+  <td>O(n)</td>
+  <td>O(n)</td>
+ </tr>
+ <tr>
+  <th>Worst</th>
+  <td>O(n)</td>
+  <td>O(1)</td>
+  <td>O(n)</td>
+  <td>O(n)</td>
+ </tr>
+ <tr>
+  <th rowspan="2">Space Complexity</th>
+  <th>Average</th>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <th>Worst</th>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
 ## When do we use an array?
 
 ## Problems
