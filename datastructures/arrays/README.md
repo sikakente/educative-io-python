@@ -4,7 +4,8 @@
 
 - [What is an array?](#what-is-an-array)
 - [Properties of an array](#properties-of-an-array)
-- [When do we use an array?](#when-do-we-use-an-array)
+- [Strengths](#strengths)
+- [Weaknesses](#weaknesses)
 - [Problems](#problems)
     - [Best Time to Buy and Sell Stocks](best_time_to_buy_sell_stocks.md)
     - [Contains Duplicate](contains_duplicate.md)
@@ -65,6 +66,20 @@
   <td>&nbsp;</td>
  </tr>
 </table>
-## When do we use an array?
+
+## Strengths
+
+- Fast lookups: It takes constant time O(1) to retrieve an element from an array, given its index.
+- Fast appends: Adding an item or element at the end of an array takes O(1) time, provided the array is not full.
+
+## Weaknesses
+
+- Insertion and deletion in an array can be quite costly especially in the following scenarios.
+    1. Deleting or inserting at the beginning of an almost full array.
+
+## Applications
+
+- Implementing a queue
+- Implementing a stack
 
 ## Problems
