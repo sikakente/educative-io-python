@@ -81,5 +81,3 @@
 
 - Implementing a queue
 - Implementing a stack
-
-## Problems
